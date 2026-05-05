@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JASN Products – Enterprise Offline Software Suite</title>
+    <meta name="description" content="Explore JASN Company's complete product suite: JASN Billing (Live), JASN Inventory, JASN CRM, and JASN Accounting (Coming Soon).">
+    <link rel="icon" href="../assets/jasn-logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .filter-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--card);
+            border: 1px solid var(--border-light);
+            color: var(--muted);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--blue);
+            color: #000;
+            border-color: var(--blue);
+        }
+
+        .product-timeline {
+            margin-top: 80px;
+            padding-top: 80px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .comparison-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 1000px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            color: var(--blue);
+        }
+
+        .comparison-table-container {
+            overflow-x: auto;
+            margin-top: 24px;
+        }
+
+        .success-message {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success);
+            color: var(--success);
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-top: 16px;
+            font-size: 0.875rem;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 24px;
+            }
+
+            .comparison-table {
+                font-size: 0.8rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <img src="../assets/jasn-logo.png" alt="JASN Logo">
+            <span class="nav-brand">JASN <span>COMPANY</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="billing.html">JASN Billing</a></li>
+            <li><a href="#contact" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" style="padding-top: 100px; min-height: 60vh;">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div style="position: relative; z-index: 1; max-width: 900px; text-align: center;">
+            <div class="hero-badge">COMPLETE PRODUCT SUITE</div>
+            <h1>All JASN Products<br>In One Place</h1>
+            <p>Explore our complete enterprise software suite. Start with JASN Billing, expand with our upcoming products. All offline, all yours.</p>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="section" style="background: var(--darker);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <h2 class="section-title">Our Products</h2>
+                <p class="section-sub" style="margin: 0 auto;">Filter by status to see live products or upcoming releases.</p>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="live">Live</button>
+                <button class="filter-btn" data-filter="coming-soon">Coming Soon</button>
+            </div>
+
+            <div class="product-grid">
+                <!-- JASN Billing -->
+                <div class="product-card fade-up" data-product-status="live">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <img src="../assets/jasn_billing_icon.png" alt="JASN Billing">
+                        </div>
+                        <div class="product-info">
+                            <h3>JASN Billing</h3>
+                            <span class="product-status">Live</span>
+                        </div>
+                    </div>
+                    <p class="product-desc">Professional offline billing & invoice management system. Lightning-fast invoicing, custom professional templates, granular audit logging, zero recurring fees.</p>
+                    <div class="product-tags">
+                        <span class="tag">Offline-First</span>
+                        <span class="tag">SQLite</span>
+                        <span class="tag">Professional</span>
+                        <span class="tag">macOS & Windows</span>
+                    </div>
+                    <div class="product-footer">
+                        <a href="billing.html" class="btn-primary">Learn More</a>
+                        <a href="billing.html" class="btn-outline">Pricing</a>
+                    </div>
+                </div>
+
+                <!-- JASN Inventory -->
+                <div class="product-card fade-up" data-product-status="coming-soon">
+                    <div class="product-header">
+                        <div class="product-icon" style="background: rgba(245, 158, 11, 0.1);">
+                            <span style="font-size: 2rem;">📦</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>JASN Inventory</h3>
+                            <span class="product-status coming-soon">Q3 2026</span>
+                        </div>
+                    </div>
+                    <p class="product-desc">Advanced stock management with multi-warehouse support. Purchase orders, supplier tracking, predictive stocking algorithms, all offline.</p>
+                    <div class="product-tags">
+                        <span class="tag">Multi-Warehouse</span>
+                        <span class="tag">Predictive</span>
+                        <span class="tag">Offline</span>
+                        <span class="tag">Coming Soon</span>
+                    </div>
+                    <div class="product-footer">
+                        <a href="inventory.html" class="btn-primary">View Details</a>
+                        <a href="#" class="btn-outline" data-early-access-btn>Early Access</a>
+                    </div>
+                </div>
+
+                <!-- JASN CRM -->
+                <div class="product-card fade-up" data-product-status="coming-soon">
+                    <div class="product-header">
+                        <div class="product-icon" style="background: rgba(245, 158, 11, 0.1);">
+                            <span style="font-size: 2rem;">💼</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>JASN CRM</h3>
+                            <span class="product-status coming-soon">Q4 2026</span>
+                        </div>
+                    </div>
+                    <p class="product-desc">Next-generation customer relationship management with AI-driven insights. Contact management, sales pipeline, customer analytics, fully offline.</p>
+                    <div class="product-tags">
+                        <span class="tag">AI-Powered</span>
+                        <span class="tag">Analytics</span>
+                        <span class="tag">Offline</span>
+                        <span class="tag">Coming Soon</span>
+                    </div>
+                    <div class="product-footer">
+                        <a href="crm.html" class="btn-primary">View Details</a>
+                        <a href="#" class="btn-outline" data-early-access-btn>Early Access</a>
+                    </div>
+                </div>
+
+                <!-- JASN Accounting -->
+                <div class="product-card fade-up" data-product-status="coming-soon">
+                    <div class="product-header">
+                        <div class="product-icon" style="background: rgba(245, 158, 11, 0.1);">
+                            <span style="font-size: 2rem;">📊</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>JASN Accounting</h3>
+                            <span class="product-status coming-soon">Q1 2027</span>
+                        </div>
+                    </div>
+                    <p class="product-desc">Full-ledger accounting with balance sheet and P&L reports. Tax management, financial statements, compliance tracking, completely offline.</p>
+                    <div class="product-tags">
+                        <span class="tag">Full-Ledger</span>
+                        <span class="tag">Tax Ready</span>
+                        <span class="tag">Offline</span>
+                        <span class="tag">Coming Soon</span>
+                    </div>
+                    <div class="product-footer">
+                        <a href="accounting.html" class="btn-primary">View Details</a>
+                        <a href="#" class="btn-outline" data-early-access-btn>Early Access</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 48px;">
+                <button class="btn-primary" data-compare="all" style="border: none; cursor: pointer;">Compare All Products →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT TIMELINE SECTION -->
+    <section class="section" style="background: var(--black);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <p class="section-label">Product Roadmap</p>
+                <h2 class="section-title">Our Launch Timeline</h2>
+                <p class="section-sub" style="margin: 0 auto;">See when each JASN product is launching and what to expect.</p>
+            </div>
+
+            <div class="timeline fade-up">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">NOW - LIVE</div>
+                        <div class="timeline-title">JASN Billing for Enterprises</div>
+                        <div class="timeline-desc">Professional offline billing & invoice management. Available for macOS and Windows. One-time payment, lifetime access.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Q3 2026</div>
+                        <div class="timeline-title">JASN Inventory Pro</div>
+                        <div class="timeline-desc">Advanced stock management with multi-warehouse support, purchase orders, supplier tracking, and predictive stocking algorithms.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Q4 2026</div>
+                        <div class="timeline-title">JASN CRM</div>
+                        <div class="timeline-desc">Next-generation customer relationship management with AI-driven insights, contact management, sales pipeline, and analytics.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Q1 2027</div>
+                        <div class="timeline-title">JASN Accounting</div>
+                        <div class="timeline-desc">Full-ledger accounting with balance sheet, P&L reports, tax management, financial statements, and compliance tracking.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="contact" style="background: var(--darker);">
+        <p class="section-label">Get Started</p>
+        <h2>Ready to Get Started?</h2>
+        <p>Choose a product and get in touch. Our team is ready to help you set up and get the most out of JASN software.</p>
+        <a href="https://wa.me/9779743630047?text=Hi%20JASN%20Company!%20I'm%20interested%20in%20your%20products." target="_blank" class="btn-primary" style="display: inline-flex; margin-bottom: 40px;">
+            <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.529 5.849L.057 23.885l6.186-1.622A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882c-1.86 0-3.588-.505-5.073-1.383l-.362-.215-3.724.977.994-3.63-.234-.374A9.861 9.861 0 0 1 2.118 12C2.118 6.536 6.536 2.118 12 2.118s9.882 4.418 9.882 9.882-4.418 9.882-9.882 9.882z"/></svg>
+            Chat on WhatsApp
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="../assets/jasn-logo.png" alt="JASN Logo">
+                <p>Enterprise offline software suite. No cloud dependencies, no subscriptions. One-time payment. Lifetime access. Your data, your rules.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com/jasncompany" target="_blank" class="social-link">f</a>
+                    <a href="https://instagram.com/jasncompany" target="_blank" class="social-link">📷</a>
+                    <a href="https://twitter.com/jasncompany" target="_blank" class="social-link">𝕏</a>
+                    <a href="https://linkedin.com/company/jasncompany" target="_blank" class="social-link">in</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="billing.html">JASN Billing</a></li>
+                    <li><a href="inventory.html">JASN Inventory</a></li>
+                    <li><a href="crm.html">JASN CRM</a></li>
+                    <li><a href="accounting.html">JASN Accounting</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="mailto:tensioncompany@gmail.com">Email</a></li>
+                    <li><a href="https://wa.me/9779743630047" target="_blank">WhatsApp</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">License</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 JASN Company. All rights reserved.</span>
+            <span>Engineering Tomorrow. Delivered Today.</span>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/9779743630047" target="_blank" class="wa-float" title="Chat with us on WhatsApp">
+        <svg fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.529 5.849L.057 23.885l6.186-1.622A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882c-1.86 0-3.588-.505-5.073-1.383l-.362-.215-3.724.977.994-3.63-.234-.374A9.861 9.861 0 0 1 2.118 12C2.118 6.536 6.536 2.118 12 2.118s9.882 4.418 9.882 9.882-4.418 9.882-9.882 9.882z"/></svg>
+    </a>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Initialize filter buttons
+        document.querySelectorAll('[data-filter]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const products = document.querySelectorAll('[data-product-status]');
+                products.forEach(product => {
+                    if (filter === 'all' || product.getAttribute('data-product-status') === filter) {
+                        product.style.display = '';
+                        setTimeout(() => product.classList.add('visible'), 10);
+                    } else {
+                        product.classList.remove('visible');
+                        setTimeout(() => product.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

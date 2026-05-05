@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JASN Company – Enterprise Offline Software Suite</title>
+    <meta name="description" content="JASN Company: Enterprise offline software suite. JASN Billing, Inventory, CRM, and Accounting. No cloud, no subscriptions, 100% data sovereignty.">
+    <link rel="icon" href="assets/jasn-logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .trust-bar {
+            padding: 40px 5%;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            background: var(--darker);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .trust-label {
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .trust-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--border-light);
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            justify-content: center;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--blue);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 4px;
+        }
+
+        .cta-section {
+            background: var(--darker);
+            padding: 100px 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(0, 170, 255, 0.08) 0%, transparent 70%);
+        }
+
+        .cta-section h2 {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-pill {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--card);
+            border: 1px solid var(--border-light);
+            border-radius: 100px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .contact-pill:hover {
+            border-color: var(--blue);
+            color: var(--white);
+        }
+
+        .contact-pill svg {
+            width: 16px;
+            height: 16px;
+            color: var(--blue);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <img src="assets/jasn-logo.png" alt="JASN Logo">
+            <span class="nav-brand">JASN <span>COMPANY</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/products.html">Products</a></li>
+            <li><a href="pages/billing.html">JASN Billing</a></li>
+            <li><a href="#contact" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-badge">ENTERPRISE OFFLINE SOFTWARE</div>
+            <h1>Engineering <em>Tomorrow.</em><br>Delivered <em>Today.</em></h1>
+            <p>Professional offline software suite with zero cloud dependencies. One-time payment. Lifetime access. Your data, your hardware, your rules.</p>
+            <div class="hero-btns">
+                <a href="pages/products.html" class="btn-primary">Explore Products →</a>
+                <a href="pages/billing.html" class="btn-secondary">JASN Billing ↓</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-num">0ms</div>
+                    <div class="stat-label">Sync Delay</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-label">Offline</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">∞</div>
+                    <div class="stat-label">Lifetime</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <span class="trust-label">TRUSTED BY ENTERPRISES WORLDWIDE</span>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            No Cloud Dependency
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            One-Time Payment
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            100% Data Sovereignty
+        </div>
+    </div>
+
+    <!-- PRODUCTS PREVIEW SECTION -->
+    <section class="section" style="background: var(--darker);">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; margin-bottom: 48px;">
+                <p class="section-label">Our Products</p>
+                <h2 class="section-title">Complete Enterprise Suite</h2>
+                <p class="section-sub" style="margin: 0 auto;">JASN Company offers a comprehensive suite of offline-first enterprise software. Start with JASN Billing, expand with our upcoming products.</p>
+            </div>
+
+            <div class="product-grid fade-up">
+                <!-- JASN Billing -->
+                <div class="product-card" data-product-status="live">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <img src="assets/jasn_billing_icon.png" alt="JASN Billing">
+                        </div>
+                        <div class="product-info">
+                            <h3>JASN Billing</h3>
+                            <span class="product-status">Live</span>
+                        </div>
+                    </div>
+                    <p class="product-desc">Professional offline billing & invoice management. Lightning-fast invoicing, custom templates, granular audit logging, zero recurring fees.</p>
+                    <div class="product-tags">
+                        <span class="tag">Offline-First</span>
+                        <span class="tag">SQLite</span>
+                        <span class="tag">Professional</span>
+                    </div>
+                    <div class="product-footer">
+                        <a href="pages/billing.html" class="btn-primary">Learn More</a>
+                        <a href="pages/billing.html" class="btn-outline">Pricing</a>
+                    </div>
+                </div>
+
+                <!-- JASN Inventory -->
+                <div class="product-card" data-product-status="coming-soon">
+                    <div class="product-header">
+                        <div class="product-icon" style="background: rgba(245, 158, 11, 0.1);">
+                            <span style="font-size: 2rem;">📦</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>JASN Inventory</h3>
+                            <span class="product-status coming-soon">Coming Q3 2026</span>
+                        </div>
+                    </div>
+                    <p class="product-desc">Advanced stock management with multi-warehouse support. Purchase orders, supplier tracking, predictive stocking algorithms, all offline.</p>
+                    <div class="product-tags">
+                        <span class="tag">Multi-Warehouse</span>
+                        <span class="tag">Predictive</span>
+                        <span class="tag">Offline</span>
+                    </div>
+                    <div class="product-footer">
+                        <a href="pages/inventory.html" class="btn-primary">View Details</a>
+                        <a href="#" class="btn-outline" data-early-access-btn>Early Access</a>
+                    </div>
+                </div>
+
+                <!-- JASN CRM -->
+                <div class="product-card" data-product-status="coming-soon">
+                    <div class="product-header">
+                        <div class="product-icon" style="background: rgba(245, 158, 11, 0.1);">
+                            <span style="font-size: 2rem;">💼</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>JASN CRM</h3>
+                            <span class="product-status coming-soon">Coming Q4 2026</span>
+                        </div>
+                    </div>
+                    <p class="product-desc">Next-generation customer relationship management with AI-driven insights. Contact management, sales pipeline, customer analytics, fully offline.</p>
+                    <div class="product-tags">
+                        <span class="tag">AI-Powered</span>
+                        <span class="tag">Analytics</span>
+                        <span class="tag">Offline</span>
+                    </div>
+                    <div class="product-footer">
+                        <a href="pages/crm.html" class="btn-primary">View Details</a>
+                        <a href="#" class="btn-outline" data-early-access-btn>Early Access</a>
+                    </div>
+                </div>
+
+                <!-- JASN Accounting -->
+                <div class="product-card" data-product-status="coming-soon">
+                    <div class="product-header">
+                        <div class="product-icon" style="background: rgba(245, 158, 11, 0.1);">
+                            <span style="font-size: 2rem;">📊</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>JASN Accounting</h3>
+                            <span class="product-status coming-soon">Coming Q1 2027</span>
+                        </div>
+                    </div>
+                    <p class="product-desc">Full-ledger accounting with balance sheet and P&L reports. Tax management, financial statements, compliance tracking, completely offline.</p>
+                    <div class="product-tags">
+                        <span class="tag">Full-Ledger</span>
+                        <span class="tag">Tax Ready</span>
+                        <span class="tag">Offline</span>
+                    </div>
+                    <div class="product-footer">
+                        <a href="pages/accounting.html" class="btn-primary">View Details</a>
+                        <a href="#" class="btn-outline" data-early-access-btn>Early Access</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="pages/products.html" class="btn-primary">View All Products & Compare →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE PRINCIPLES SECTION -->
+    <section class="section" style="background: var(--black);">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; margin-bottom: 48px;">
+                <p class="section-label">The JASN Directive</p>
+                <h2 class="section-title">Our Core Principles</h2>
+            </div>
+
+            <div class="features-grid fade-up">
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                    <div class="feat-title">Business-First Engineering</div>
+                    <div class="feat-desc">We strip away superfluous features to deliver unadulterated performance tailored exclusively for high-stakes enterprise workflows.</div>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
+                    <div class="feat-title">True Offline Sovereignty</div>
+                    <div class="feat-desc">Your data, your hardware, your rules. JASN software operates flawlessly without external dependencies or cloud vulnerabilities.</div>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <div class="feat-title">Capital Efficiency</div>
+                    <div class="feat-desc">Eradicate subscription fatigue. Our one-time licensing model ensures predictable OPEX and maximized lifetime ROI.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="contact">
+        <p class="section-label">Get in Touch</p>
+        <h2>Ready to Transform<br>Your Enterprise Operations?</h2>
+        <p>Contact us via WhatsApp, email, or follow us on social media. We're a real team ready to help you get set up.</p>
+        <a href="https://wa.me/9779743630047?text=Hi%20JASN%20Company!%20I%20want%20to%20know%20more%20about%20your%20products." target="_blank" class="btn-primary" style="display: inline-flex; margin-bottom: 40px;">
+            <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.529 5.849L.057 23.885l6.186-1.622A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882c-1.86 0-3.588-.505-5.073-1.383l-.362-.215-3.724.977.994-3.63-.234-.374A9.861 9.861 0 0 1 2.118 12C2.118 6.536 6.536 2.118 12 2.118s9.882 4.418 9.882 9.882-4.418 9.882-9.882 9.882z"/></svg>
+            Chat on WhatsApp — +977 9743630047
+        </a>
+        <div class="contact-grid">
+            <a href="mailto:tensioncompany@gmail.com" class="contact-pill">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                tensioncompany@gmail.com
+            </a>
+            <a href="https://facebook.com/jasncompany" target="_blank" class="contact-pill">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Facebook
+            </a>
+            <a href="https://instagram.com/jasncompany" target="_blank" class="contact-pill">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                Instagram
+            </a>
+            <a href="https://twitter.com/jasncompany" target="_blank" class="contact-pill">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7a10.6 10.6 0 01-9-5.5z"/></svg>
+                Twitter
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="assets/jasn-logo.png" alt="JASN Logo">
+                <p>Enterprise offline software suite. No cloud dependencies, no subscriptions. One-time payment. Lifetime access. Your data, your rules.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com/jasncompany" target="_blank" class="social-link">f</a>
+                    <a href="https://instagram.com/jasncompany" target="_blank" class="social-link">📷</a>
+                    <a href="https://twitter.com/jasncompany" target="_blank" class="social-link">𝕏</a>
+                    <a href="https://linkedin.com/company/jasncompany" target="_blank" class="social-link">in</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="pages/billing.html">JASN Billing</a></li>
+                    <li><a href="pages/inventory.html">JASN Inventory</a></li>
+                    <li><a href="pages/crm.html">JASN CRM</a></li>
+                    <li><a href="pages/accounting.html">JASN Accounting</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="pages/products.html">All Products</a></li>
+                    <li><a href="mailto:tensioncompany@gmail.com">Email</a></li>
+                    <li><a href="https://wa.me/9779743630047" target="_blank">WhatsApp</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">License</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 JASN Company. All rights reserved.</span>
+            <span>Engineering Tomorrow. Delivered Today.</span>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/9779743630047" target="_blank" class="wa-float" title="Chat with us on WhatsApp">
+        <svg fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.529 5.849L.057 23.885l6.186-1.622A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882c-1.86 0-3.588-.505-5.073-1.383l-.362-.215-3.724.977.994-3.63-.234-.374A9.861 9.861 0 0 1 2.118 12C2.118 6.536 6.536 2.118 12 2.118s9.882 4.418 9.882 9.882-4.418 9.882-9.882 9.882z"/></svg>
+    </a>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

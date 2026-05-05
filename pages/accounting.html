@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JASN Accounting – Coming Q1 2027</title>
+    <meta name="description" content="JASN Accounting: Full-ledger accounting with balance sheet and P&L reports. Coming Q1 2027. Offline-first, tax-ready, no cloud dependency.">
+    <link rel="icon" href="../assets/jasn-logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .coming-soon-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 100px;
+            padding: 8px 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--warning);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .coming-soon-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--warning);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .early-access-form {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            margin: 40px auto 0;
+        }
+
+        .early-access-form h3 {
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .early-access-form p {
+            color: var(--muted);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--darker);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+
+        .form-group input::placeholder {
+            color: var(--muted);
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--warning);
+            color: #000;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .form-submit:hover {
+            background: #f59e0b;
+        }
+
+        .success-message {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success);
+            color: var(--success);
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-top: 16px;
+            font-size: 0.875rem;
+            text-align: center;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .features-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 60px 0 0;
+        }
+
+        .feature-preview {
+            background: var(--card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+        }
+
+        .feature-icon-large {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-preview h4 {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature-preview p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <img src="../assets/jasn-logo.png" alt="JASN Logo">
+            <span class="nav-brand">JASN <span>COMPANY</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="billing.html">JASN Billing</a></li>
+            <li><a href="#early-access" class="nav-cta">Early Access</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" style="padding-top: 100px; min-height: 70vh;">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div style="position: relative; z-index: 1; max-width: 900px; text-align: center;">
+            <div class="coming-soon-badge">COMING Q1 2027</div>
+            <h1>JASN Accounting<br>Complete Financial Management</h1>
+            <p>Full-ledger accounting with balance sheet and P&L reports. Tax management, financial statements, compliance tracking—all offline.</p>
+            <div class="hero-btns">
+                <a href="#early-access" class="btn-primary">Get Early Access →</a>
+                <a href="products.html" class="btn-secondary">Back to Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OVERVIEW SECTION -->
+    <section class="section" style="background: var(--darker);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <p class="section-label">Coming Soon</p>
+                <h2 class="section-title">JASN Accounting<br>Reimagined</h2>
+                <p class="section-sub" style="margin: 0 auto;">The final piece of the JASN enterprise suite. Professional accounting built for businesses that demand offline-first operations and complete financial control.</p>
+            </div>
+
+            <div class="features-preview fade-up">
+                <div class="feature-preview">
+                    <div class="feature-icon-large">📚</div>
+                    <h4>Full-Ledger Accounting</h4>
+                    <p>Complete double-entry bookkeeping with chart of accounts, journal entries, and general ledger.</p>
+                </div>
+
+                <div class="feature-preview">
+                    <div class="feature-icon-large">📊</div>
+                    <h4>Financial Statements</h4>
+                    <p>Automatic balance sheet, income statement, cash flow statement, and trial balance generation.</p>
+                </div>
+
+                <div class="feature-preview">
+                    <div class="feature-icon-large">💼</div>
+                    <h4>Tax Management</h4>
+                    <p>Tax-ready reports, GST/VAT tracking, deduction management, and compliance documentation.</p>
+                </div>
+
+                <div class="feature-preview">
+                    <div class="feature-icon-large">📈</div>
+                    <h4>Financial Analysis</h4>
+                    <p>Ratio analysis, trend analysis, budget vs. actual, and profitability by department/project.</p>
+                </div>
+
+                <div class="feature-preview">
+                    <div class="feature-icon-large">🔗</div>
+                    <h4>Unified Integration</h4>
+                    <p>Seamless integration with JASN Billing, Inventory, and CRM. Single source of truth for financials.</p>
+                </div>
+
+                <div class="feature-preview">
+                    <div class="feature-icon-large">🔐</div>
+                    <h4>Audit Trail</h4>
+                    <p>Complete transaction history with user tracking, change logs, and compliance audit trails.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEY FEATURES SECTION -->
+    <section class="section" style="background: var(--black);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <p class="section-label">Planned Features</p>
+                <h2 class="section-title">What's Coming</h2>
+            </div>
+
+            <div class="features-grid fade-up">
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg></div>
+                    <div class="feat-title">100% Offline</div>
+                    <div class="feat-desc">Complete accounting functionality without internet. Your financial data stays local and secure.</div>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <div class="feat-title">Multi-Currency</div>
+                    <div class="feat-desc">Support for multiple currencies with automatic exchange rate conversion and reporting.</div>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm0 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v10m-6 0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2m0 0V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/></svg></div>
+                    <div class="feat-title">Advanced Reports</div>
+                    <div class="feat-desc">Balance sheet, P&L, cash flow, tax reports, and custom financial statements.</div>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                    <div class="feat-title">Tax Compliance</div>
+                    <div class="feat-desc">GST/VAT tracking, tax deduction management, and compliance documentation for audits.</div>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2zm10-10V7a4 4 0 0 0-8 0v4h8z"/></svg></div>
+                    <div class="feat-title">Secure & Compliant</div>
+                    <div class="feat-desc">Bank-level encryption, audit trails, and complete compliance with accounting standards.</div>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg></div>
+                    <div class="feat-title">Budget Management</div>
+                    <div class="feat-desc">Create budgets, track spending, and analyze budget vs. actual performance.</div>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 0 0 8.646 3.646 9.003 9.003 0 0 0 12 21a9.003 9.003 0 0 0 8.354-5.646z"/></svg></div>
+                    <div class="feat-title">Forecasting</div>
+                    <div class="feat-desc">Financial forecasting and scenario analysis for better business planning.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROADMAP SECTION -->
+    <section class="section" style="background: var(--darker);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <p class="section-label">Development Timeline</p>
+                <h2 class="section-title">Launch Timeline</h2>
+            </div>
+
+            <div class="timeline fade-up">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Q1 2027 - LAUNCH</div>
+                        <div class="timeline-title">JASN Accounting v1.0</div>
+                        <div class="timeline-desc">Full-ledger accounting, financial statements, tax management, and compliance reporting.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Q2 2027</div>
+                        <div class="timeline-title">Advanced Features</div>
+                        <div class="timeline-desc">Budget management, forecasting, multi-currency support, and advanced analytics.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Q3 2027</div>
+                        <div class="timeline-title">Complete Integration</div>
+                        <div class="timeline-desc">Seamless integration with all JASN products for unified enterprise management.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EARLY ACCESS SECTION -->
+    <section class="section" id="early-access" style="background: var(--black);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <p class="section-label">Be First</p>
+                <h2 class="section-title">Get Early Access</h2>
+                <p class="section-sub" style="margin: 0 auto;">Sign up to be notified when JASN Accounting launches. Early adopters get special pricing.</p>
+            </div>
+
+            <form class="early-access-form fade-up" data-early-access>
+                <h3>Early Access Signup</h3>
+                <p>Be among the first to use JASN Accounting. We'll notify you as soon as it launches.</p>
+                
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" placeholder="Your company">
+                </div>
+
+                <button type="submit" class="form-submit">Get Early Access</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" style="background: var(--darker);">
+        <p class="section-label">In the Meantime</p>
+        <h2>Start with JASN Billing</h2>
+        <p>While you wait for JASN Accounting, get started with JASN Billing today. Professional offline invoicing, ready now.</p>
+        <a href="billing.html" class="btn-primary" style="display: inline-flex; margin-bottom: 40px;">
+            Explore JASN Billing →
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="../assets/jasn-logo.png" alt="JASN Logo">
+                <p>Enterprise offline software suite. No cloud dependencies, no subscriptions. One-time payment. Lifetime access. Your data, your rules.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com/jasncompany" target="_blank" class="social-link">f</a>
+                    <a href="https://instagram.com/jasncompany" target="_blank" class="social-link">📷</a>
+                    <a href="https://twitter.com/jasncompany" target="_blank" class="social-link">𝕏</a>
+                    <a href="https://linkedin.com/company/jasncompany" target="_blank" class="social-link">in</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="billing.html">JASN Billing</a></li>
+                    <li><a href="inventory.html">JASN Inventory</a></li>
+                    <li><a href="crm.html">JASN CRM</a></li>
+                    <li><a href="accounting.html">JASN Accounting</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="products.html">All Products</a></li>
+                    <li><a href="mailto:tensioncompany@gmail.com">Email</a></li>
+                    <li><a href="https://wa.me/9779743630047" target="_blank">WhatsApp</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">License</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 JASN Company. All rights reserved.</span>
+            <span>Engineering Tomorrow. Delivered Today.</span>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/9779743630047" target="_blank" class="wa-float" title="Chat with us on WhatsApp">
+        <svg fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.529 5.849L.057 23.885l6.186-1.622A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882c-1.86 0-3.588-.505-5.073-1.383l-.362-.215-3.724.977.994-3.63-.234-.374A9.861 9.861 0 0 1 2.118 12C2.118 6.536 6.536 2.118 12 2.118s9.882 4.418 9.882 9.882-4.418 9.882-9.882 9.882z"/></svg>
+    </a>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

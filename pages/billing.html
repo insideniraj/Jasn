@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JASN Billing – Professional Offline Billing Software</title>
+    <meta name="description" content="JASN Billing: Professional offline billing & invoice management. Lightning-fast invoicing, custom templates, zero cloud dependency. One-time payment, lifetime access.">
+    <link rel="icon" href="../assets/jasn-logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .product-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .product-hero-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-showcase {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-showcase::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(0, 170, 255, 0.1) 0%, transparent 60%);
+        }
+
+        .product-showcase-icon {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 24px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(0, 170, 255, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-showcase-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 60px 0 0;
+        }
+
+        .advantage-card {
+            background: var(--card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.2s;
+        }
+
+        .advantage-card:hover {
+            border-color: var(--border);
+            transform: translateY(-4px);
+        }
+
+        .advantage-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 170, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--blue);
+            font-size: 1.5rem;
+        }
+
+        .advantage-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .advantage-desc {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 60px 0 0;
+        }
+
+        .spec-card {
+            background: var(--darker);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .spec-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--blue);
+            margin-bottom: 8px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .spec-value {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .modules-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin: 40px 0 0;
+        }
+
+        .module-badge {
+            background: var(--card);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .module-badge:hover {
+            border-color: var(--border);
+            background: rgba(0, 170, 255, 0.05);
+        }
+
+        .module-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .module-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pricing-info h3 {
+            margin-bottom: 16px;
+        }
+
+        .pricing-info p {
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .pricing-highlight {
+            background: rgba(0, 170, 255, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .pricing-highlight-label {
+            font-size: 0.8rem;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .pricing-highlight-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--blue);
+        }
+
+        .pricing-highlight-note {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <img src="../assets/jasn-logo.png" alt="JASN Logo">
+            <span class="nav-brand">JASN <span>COMPANY</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="billing.html">JASN Billing</a></li>
+            <li><a href="#pricing" class="nav-cta">Get Pricing</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" style="padding-top: 100px; min-height: 70vh;">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div style="position: relative; z-index: 1; max-width: 900px; text-align: center;">
+            <div class="hero-badge">FLAGSHIP PRODUCT - LIVE</div>
+            <h1>JASN Billing<br>for Enterprises</h1>
+            <p>Professional offline billing & invoice management. Lightning-fast invoicing, custom professional templates, granular audit logging. Zero cloud dependency. One-time payment. Lifetime access.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/9779743630047?text=I%20want%20to%20buy%20lifetime%20subscription%20for%20JASN%20Billing" target="_blank" class="btn-primary">Get Pricing on WhatsApp →</a>
+                <a href="#features" class="btn-secondary">View Features ↓</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT SHOWCASE SECTION -->
+    <section class="section" style="background: var(--darker);">
+        <div class="product-hero-grid fade-up">
+            <div>
+                <p class="section-label">Product Overview</p>
+                <h2 class="section-title">Enterprise-Grade Billing<br>Without the Cloud</h2>
+                <p class="section-sub">JASN Billing is built for businesses that need permanent local access to billing, customers, products, payments, reports, printing, and PDF export without any internet dependency.</p>
+                <div style="margin-top: 32px;">
+                    <p style="color: var(--muted); margin-bottom: 16px;"><strong>Key Capabilities:</strong></p>
+                    <ul style="list-style: none; color: var(--muted);">
+                        <li style="margin-bottom: 12px;">✓ Create and manage unlimited invoices</li>
+                        <li style="margin-bottom: 12px;">✓ Professional invoice templates</li>
+                        <li style="margin-bottom: 12px;">✓ Customer & product database</li>
+                        <li style="margin-bottom: 12px;">✓ Payment tracking & history</li>
+                        <li style="margin-bottom: 12px;">✓ PDF & Excel export</li>
+                        <li style="margin-bottom: 12px;">✓ Local printing & backup</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-showcase">
+                <div class="product-showcase-icon">
+                    <img src="../assets/jasn_billing_icon.png" alt="JASN Billing">
+                </div>
+                <h3>JASN Billing</h3>
+                <p style="color: var(--muted); margin-top: 8px;">Professional Offline Billing</p>
+                <div class="product-tags" style="justify-content: center; margin-top: 20px;">
+                    <span class="tag">macOS</span>
+                    <span class="tag">Windows</span>
+                    <span class="tag">Offline</span>
+                    <span class="tag">SQLite</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="section" id="features" style="background: var(--black);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <p class="section-label">Features</p>
+                <h2 class="section-title">Complete Billing Solution</h2>
+                <p class="section-sub" style="margin: 0 auto;">Everything you need for professional billing, all offline.</p>
+            </div>
+
+            <div class="features-grid fade-up">
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg></div>
+                    <div class="feat-title">100% Offline First</div>
+                    <div class="feat-desc">Every feature works without Wi-Fi. Login, invoices, payments, PDF export, backups — all local.</div>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2"/></svg></div>
+                    <div class="feat-title">Professional Invoicing</div>
+                    <div class="feat-desc">Draft, Unpaid, Partial, Paid statuses. VAT toggle, line discounts, custom terms — A4-ready print output.</div>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+                    <div class="feat-title">Payment Tracking</div>
+                    <div class="feat-desc">Full payment history per invoice. Record partial payments, track overdue, support Cash/Bank/Cheque/Online.</div>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+                    <div class="feat-title">Customer & Product DB</div>
+                    <div class="feat-desc">Full CRUD for customers & products with CSV/Excel import. HSN codes, stock alerts, category support.</div>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                    <div class="feat-title">PDF & Excel Export</div>
+                    <div class="feat-desc">Professional PDF invoices with logo. Revenue, VAT, Outstanding, Customer Statement reports in Excel or PDF.</div>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <div class="feat-title">Your Brand, Your Data</div>
+                    <div class="feat-desc">Upload your logo, set custom colors, theme presets. Local SQLite — your data never leaves your machine.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVANTAGES SECTION -->
+    <section class="section" style="background: var(--darker);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <p class="section-label">Why JASN Billing</p>
+                <h2 class="section-title">Key Advantages</h2>
+            </div>
+
+            <div class="advantages-grid fade-up">
+                <div class="advantage-card">
+                    <div class="advantage-icon">⚡</div>
+                    <div class="advantage-title">Lightning Fast</div>
+                    <div class="advantage-desc">No cloud latency. Everything opens in milliseconds. Local SQLite database ensures instant access to all your data.</div>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">🔒</div>
+                    <div class="advantage-title">100% Secure</div>
+                    <div class="advantage-desc">Your data never leaves your machine. No third-party access, no cloud vulnerabilities. Complete data sovereignty.</div>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">💰</div>
+                    <div class="advantage-title">One-Time Payment</div>
+                    <div class="advantage-desc">No monthly subscriptions. No renewal emails. No price hikes. Pay once, use forever. Lifetime access included.</div>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">🌐</div>
+                    <div class="advantage-title">Works Offline</div>
+                    <div class="advantage-desc">No internet required. Works in power outages. Works on planes, trains, remote locations. Business never stops.</div>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">📊</div>
+                    <div class="advantage-title">Professional Reports</div>
+                    <div class="advantage-desc">Revenue reports, VAT reports, outstanding invoices, customer statements. All exportable as PDF or Excel.</div>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">🎨</div>
+                    <div class="advantage-title">Fully Customizable</div>
+                    <div class="advantage-desc">Upload your logo, customize colors, choose from theme presets. Make it your own. Professional branding included.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULES SECTION -->
+    <section class="section" style="background: var(--black);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <p class="section-label">Included Modules</p>
+                <h2 class="section-title">7 Powerful Modules</h2>
+                <p class="section-sub" style="margin: 0 auto;">All included in one application. No additional purchases needed.</p>
+            </div>
+
+            <div class="modules-showcase fade-up">
+                <div class="module-badge">
+                    <div class="module-icon">📊</div>
+                    <div class="module-name">Dashboard</div>
+                </div>
+                <div class="module-badge">
+                    <div class="module-icon">📄</div>
+                    <div class="module-name">Invoices</div>
+                </div>
+                <div class="module-badge">
+                    <div class="module-icon">👥</div>
+                    <div class="module-name">Customers</div>
+                </div>
+                <div class="module-badge">
+                    <div class="module-icon">📦</div>
+                    <div class="module-name">Products</div>
+                </div>
+                <div class="module-badge">
+                    <div class="module-icon">💳</div>
+                    <div class="module-name">Payments</div>
+                </div>
+                <div class="module-badge">
+                    <div class="module-icon">📈</div>
+                    <div class="module-name">Reports</div>
+                </div>
+                <div class="module-badge">
+                    <div class="module-icon">⚙️</div>
+                    <div class="module-name">Settings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIFICATIONS SECTION -->
+    <section class="section" style="background: var(--darker);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <p class="section-label">Technical Specifications</p>
+                <h2 class="section-title">Built for Performance</h2>
+            </div>
+
+            <div class="specs-grid fade-up">
+                <div class="spec-card">
+                    <div class="spec-label">Database</div>
+                    <div class="spec-value">SQLite</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Platforms</div>
+                    <div class="spec-value">macOS & Windows</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Internet Required</div>
+                    <div class="spec-value">Never</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Data Storage</div>
+                    <div class="spec-value">Local Only</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="section" id="pricing" style="background: var(--black);">
+        <div class="container">
+            <div class="pricing-grid fade-up">
+                <div class="pricing-info">
+                    <p class="section-label">Pricing</p>
+                    <h2 class="section-title">One Payment.<br>Forever Yours.</h2>
+                    <p>No monthly fees. No cloud subscriptions. Just one honest price for lifetime access.</p>
+                    
+                    <div class="pricing-highlight">
+                        <div class="pricing-highlight-label">Lifetime License</div>
+                        <div class="pricing-highlight-value">One-Time</div>
+                        <div class="pricing-highlight-note">macOS & Windows · Lifetime updates · Forever access</div>
+                    </div>
+
+                    <p style="color: var(--muted); font-size: 0.9rem;">
+                        <strong>What's Included:</strong><br>
+                        All 7 modules · Unlimited invoices & customers · PDF, Excel & Print export · Custom branding · VAT & Discount support · Backup & Restore · Dark & Light mode · No internet required
+                    </p>
+                </div>
+
+                <div class="pricing-card fade-up">
+                    <div class="pricing-label">JASN BILLING FOR ENTERPRISES</div>
+                    <div class="pricing-title">Lifetime License</div>
+                    <div style="font-size: 2.5rem; font-weight: 900; color: var(--blue); margin: 16px 0;">₹4999</div>
+                    <div class="pricing-note">One-time payment · macOS & Windows · Lifetime updates</div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span>All 7 modules included</li>
+                        <li><span class="check">✓</span>Unlimited invoices & customers</li>
+                        <li><span class="check">✓</span>PDF, Excel & Print export</li>
+                        <li><span class="check">✓</span>Custom branding & logo upload</li>
+                        <li><span class="check">✓</span>VAT & Discount support</li>
+                        <li><span class="check">✓</span>Backup & Restore</li>
+                        <li><span class="check">✓</span>Dark & Light mode</li>
+                        <li><span class="check">✓</span>macOS (.app) + Windows (.exe)</li>
+                        <li><span class="check">✓</span>No internet required — ever</li>
+                    </ul>
+                    <a href="https://wa.me/9779743630047?text=I%20want%20to%20buy%20lifetime%20subscription%20for%20JASN%20Billing" target="_blank" class="btn-primary" style="width: 100%; justify-content: center; font-size: 1rem; padding: 16px;">
+                        Get Pricing on WhatsApp →
+                    </a>
+                    <div class="guarantee">
+                        🔒 &nbsp;Secure one-time purchase · Lifetime license · Your data stays local & private
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" style="background: var(--darker);">
+        <p class="section-label">Ready to Get Started?</p>
+        <h2>Transform Your Billing Workflow</h2>
+        <p>Stop worrying about cloud subscriptions and data security. Get JASN Billing today and enjoy professional billing forever.</p>
+        <a href="https://wa.me/9779743630047?text=I%20want%20to%20buy%20lifetime%20subscription%20for%20JASN%20Billing" target="_blank" class="btn-primary" style="display: inline-flex; margin-bottom: 40px;">
+            <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.529 5.849L.057 23.885l6.186-1.622A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882c-1.86 0-3.588-.505-5.073-1.383l-.362-.215-3.724.977.994-3.63-.234-.374A9.861 9.861 0 0 1 2.118 12C2.118 6.536 6.536 2.118 12 2.118s9.882 4.418 9.882 9.882-4.418 9.882-9.882 9.882z"/></svg>
+            Chat on WhatsApp
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="../assets/jasn-logo.png" alt="JASN Logo">
+                <p>Enterprise offline software suite. No cloud dependencies, no subscriptions. One-time payment. Lifetime access. Your data, your rules.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com/jasncompany" target="_blank" class="social-link">f</a>
+                    <a href="https://instagram.com/jasncompany" target="_blank" class="social-link">📷</a>
+                    <a href="https://twitter.com/jasncompany" target="_blank" class="social-link">𝕏</a>
+                    <a href="https://linkedin.com/company/jasncompany" target="_blank" class="social-link">in</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="billing.html">JASN Billing</a></li>
+                    <li><a href="inventory.html">JASN Inventory</a></li>
+                    <li><a href="crm.html">JASN CRM</a></li>
+                    <li><a href="accounting.html">JASN Accounting</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="products.html">All Products</a></li>
+                    <li><a href="mailto:tensioncompany@gmail.com">Email</a></li>
+                    <li><a href="https://wa.me/9779743630047" target="_blank">WhatsApp</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">License</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 JASN Company. All rights reserved.</span>
+            <span>Engineering Tomorrow. Delivered Today.</span>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/9779743630047" target="_blank" class="wa-float" title="Chat with us on WhatsApp">
+        <svg fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.529 5.849L.057 23.885l6.186-1.622A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882c-1.86 0-3.588-.505-5.073-1.383l-.362-.215-3.724.977.994-3.63-.234-.374A9.861 9.861 0 0 1 2.118 12C2.118 6.536 6.536 2.118 12 2.118s9.882 4.418 9.882 9.882-4.418 9.882-9.882 9.882z"/></svg>
+    </a>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
