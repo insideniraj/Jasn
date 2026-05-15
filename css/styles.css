@@ -768,8 +768,8 @@ footer {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 48px;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 48px;

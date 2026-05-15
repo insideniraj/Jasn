@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services – JASN Company</title>
+    <meta name="description" content="JASN Company Services: Mobile Development, Website Development, and Social Media Marketing Management. Professional digital solutions for your business.">
+    <link rel="icon" href="../assets/jasn-logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* ============================================================================
+           SERVICES PAGE STYLES
+           Brand Colors: #000000 (Obsidian Black), #00AAFF (Electric Blue), #FFFFFF (Pure White)
+           Extended: #0077CC (Deep Blue), #33CCFF (Neon Cyan), #1A1A1A (Charcoal)
+           ============================================================================ */
+
+        .services-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 140px 5% 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0, 170, 255, 0.12) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .services-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(0, 170, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 170, 255, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        .services-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .services-hero h1 em {
+            font-style: normal;
+            color: var(--blue);
+        }
+
+        .services-hero p {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: var(--muted);
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: 80px 5% 100px;
+            background: var(--darker);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--card);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 40px 36px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.35s ease;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--blue), transparent);
+            opacity: 0;
+            transition: opacity 0.35s;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -40%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 170, 255, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            transition: opacity 0.35s;
+            opacity: 0;
+        }
+
+        .service-card:hover {
+            border-color: rgba(0, 170, 255, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 24px 64px rgba(0, 170, 255, 0.12);
+        }
+
+        .service-card:hover::before,
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 72px;
+            height: 72px;
+            background: rgba(0, 170, 255, 0.1);
+            border: 1px solid rgba(0, 170, 255, 0.2);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-icon svg {
+            width: 34px;
+            height: 34px;
+            color: var(--blue);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card .service-desc {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li svg {
+            width: 16px;
+            height: 16px;
+            color: var(--blue);
+            flex-shrink: 0;
+        }
+
+        .service-cta {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--blue);
+            color: #000;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .service-cta a:hover {
+            background: var(--blue-glow);
+            transform: translateY(-1px);
+        }
+
+        /* Why Choose Us Section */
+        .why-section {
+            padding: 100px 5%;
+            background: var(--black);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 48px auto 0;
+        }
+
+        .why-card {
+            background: var(--card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .why-card:hover {
+            border-color: var(--border);
+            transform: translateY(-4px);
+        }
+
+        .why-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--blue);
+            margin-bottom: 8px;
+        }
+
+        .why-label {
+            font-size: 0.85rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* CTA Section */
+        .services-cta-section {
+            background: var(--darker);
+            padding: 100px 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(0, 170, 255, 0.08) 0%, transparent 70%);
+        }
+
+        .services-cta-section h2 {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 16px;
+        }
+
+        .services-cta-section p {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .services-cta-section .btn-primary {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-hero {
+                padding: 120px 5% 60px;
+                min-height: auto;
+            }
+
+            .service-card {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <img src="../assets/jasn-logo.png" alt="JASN Logo">
+            <span class="nav-brand">JASN <span>COMPANY</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="billing.html">JASN Billing</a></li>
+            <li><a href="#contact" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- SERVICES HERO -->
+    <section class="services-hero">
+        <div class="services-hero-content fade-up">
+            <div class="hero-badge">DIGITAL SERVICES</div>
+            <h1>Our <em>Services</em></h1>
+            <p>We deliver end-to-end digital solutions — from mobile apps and websites to social media marketing — tailored to grow your business.</p>
+        </div>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section class="services-section">
+        <div class="services-grid">
+
+            <!-- Mobile Development -->
+            <div class="service-card fade-up">
+                <div class="service-icon">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                        <line x1="12" y1="18" x2="12.01" y2="18"/>
+                    </svg>
+                </div>
+                <h3>Mobile Development</h3>
+                <p class="service-desc">We build high-performance native and cross-platform mobile applications for iOS and Android that deliver seamless user experiences and drive business growth.</p>
+                <ul class="service-features">
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        Native iOS & Android Apps
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        Cross-Platform (React Native / Flutter)
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        UI/UX Design & Prototyping
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        App Store Optimization & Deployment
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        Maintenance & Support
+                    </li>
+                </ul>
+                <div class="service-cta">
+                    <a href="https://wa.me/9779743630047?text=Hi%20JASN!%20I%27m%20interested%20in%20Mobile%20Development%20services." target="_blank">
+                        Get a Quote →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Website Development -->
+            <div class="service-card fade-up">
+                <div class="service-icon">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <h3>Website Development</h3>
+                <p class="service-desc">We create stunning, responsive, and high-performance websites — from corporate portals and e-commerce platforms to custom web applications that convert visitors into customers.</p>
+                <ul class="service-features">
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        Custom Website Design & Development
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        E-Commerce Solutions
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        Responsive & Mobile-First Design
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        SEO Optimization & Performance
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        CMS Integration (WordPress, Custom)
+                    </li>
+                </ul>
+                <div class="service-cta">
+                    <a href="https://wa.me/9779743630047?text=Hi%20JASN!%20I%27m%20interested%20in%20Website%20Development%20services." target="_blank">
+                        Get a Quote →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Social Media Marketing Management -->
+            <div class="service-card fade-up">
+                <div class="service-icon">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                        <path d="M4 4l4 4M20 4l-4 4"/>
+                        <circle cx="12" cy="2" r="1"/>
+                        <path d="M8.5 14h7M7 17h10"/>
+                    </svg>
+                </div>
+                <h3>Social Media Marketing</h3>
+                <p class="service-desc">We manage and grow your brand's social media presence with data-driven strategies, engaging content, and targeted campaigns that deliver measurable results.</p>
+                <ul class="service-features">
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        Social Media Strategy & Planning
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        Content Creation & Scheduling
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        Paid Ads (Facebook, Instagram, Google)
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        Analytics & Performance Reporting
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        Community Management & Engagement
+                    </li>
+                </ul>
+                <div class="service-cta">
+                    <a href="https://wa.me/9779743630047?text=Hi%20JASN!%20I%27m%20interested%20in%20Social%20Media%20Marketing%20services." target="_blank">
+                        Get a Quote →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-section">
+        <div class="container">
+            <div class="fade-up" style="text-align: center;">
+                <p class="section-label">Why Choose JASN</p>
+                <h2 class="section-title">Results That Speak</h2>
+            </div>
+            <div class="why-grid fade-up">
+                <div class="why-card">
+                    <div class="why-number">50+</div>
+                    <div class="why-label">Projects Delivered</div>
+                </div>
+                <div class="why-card">
+                    <div class="why-number">100%</div>
+                    <div class="why-label">Client Satisfaction</div>
+                </div>
+                <div class="why-card">
+                    <div class="why-number">24/7</div>
+                    <div class="why-label">Support Available</div>
+                </div>
+                <div class="why-card">
+                    <div class="why-number">3+</div>
+                    <div class="why-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="services-cta-section" id="contact">
+        <p class="section-label">Ready to Start?</p>
+        <h2>Let's Build Something<br><em style="font-style: normal; color: var(--blue);">Amazing Together</em></h2>
+        <p>Contact us today to discuss your project. We'll provide a free consultation and custom quote tailored to your needs.</p>
+        <a href="https://wa.me/9779743630047?text=Hi%20JASN!%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" class="btn-primary" style="display: inline-flex;">
+            <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.529 5.849L.057 23.885l6.186-1.622A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882c-1.86 0-3.588-.505-5.073-1.383l-.362-.215-3.724.977.994-3.63-.234-.374A9.861 9.861 0 0 1 2.118 12C2.118 6.536 6.536 2.118 12 2.118s9.882 4.418 9.882 9.882-4.418 9.882-9.882 9.882z"/></svg>
+            Chat on WhatsApp
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="../assets/jasn-logo.png" alt="JASN Logo">
+                <p>Enterprise offline software suite & digital services. No cloud dependencies, no subscriptions. One-time payment. Lifetime access. Your data, your rules.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com/jasncompany" target="_blank" class="social-link">f</a>
+                    <a href="https://instagram.com/jasncompany" target="_blank" class="social-link">📷</a>
+                    <a href="https://twitter.com/jasncompany" target="_blank" class="social-link">𝕏</a>
+                    <a href="https://linkedin.com/company/jasncompany" target="_blank" class="social-link">in</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="billing.html">JASN Billing</a></li>
+                    <li><a href="inventory.html">JASN Inventory</a></li>
+                    <li><a href="crm.html">JASN CRM</a></li>
+                    <li><a href="accounting.html">JASN Accounting</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">Mobile Development</a></li>
+                    <li><a href="services.html">Website Development</a></li>
+                    <li><a href="services.html">Social Media Marketing</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="products.html">All Products</a></li>
+                    <li><a href="mailto:tensioncompany@gmail.com">Email</a></li>
+                    <li><a href="https://wa.me/9779743630047" target="_blank">WhatsApp</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 JASN Company. All rights reserved.</span>
+            <span>Engineering Tomorrow. Delivered Today.</span>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/9779743630047" target="_blank" class="wa-float" title="Chat with us on WhatsApp">
+        <svg fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.529 5.849L.057 23.885l6.186-1.622A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882c-1.86 0-3.588-.505-5.073-1.383l-.362-.215-3.724.977.994-3.63-.234-.374A9.861 9.861 0 0 1 2.118 12C2.118 6.536 6.536 2.118 12 2.118s9.882 4.418 9.882 9.882-4.418 9.882-9.882 9.882z"/></svg>
+    </a>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
